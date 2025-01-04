@@ -20,7 +20,8 @@
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="home"><img src="logoo.jpg" alt="website logo" class="logo-image"></a>
     <form action="/search_data" class="form-inline my-2 my-lg-0" method="post">
-      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" style="width: 500px;" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" style="width: 500px;"
+        aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <button style="background-color:white;" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -44,43 +45,43 @@
       </ul>
     </div>
   </nav>
-    <ul>
-      <div class="container">
-        {{#each data}}
-        <li>{{this.Product_name}}</li>
+  <ul>
+    <div class="container">
+      {{#each data}}
+      <li>{{this.Product_name}}</li>
 
-        <div class="row">
-          <div class="col-md-4">
-            <img src={{this.Product_image}} alt="Product Image" class="img-fluid">
-          </div>
-          <div class="col-md-8">
-            <h2>{{this.Product_name}}</h2>
-            <h3>&#8377; {{this.Product_price}}</h3>
-            <p>Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-              Praesent libero. Sed cursus ante dapibus diam.</p>
-            <form action="/add_to_cart" method="POST">
-            
-              <input type="hidden" name="product_name" value="{{this.Product_name}}">
-              <input type="hidden" name="product_price" value="{{this.Product_price}}">
-              <input type="hidden" name="Seller_id" value="{{this.Seller_id}}">
-              <input type="hidden" name="id_P" value="{{this.id_P}}">
-
-
-
-              <button type="submit" class="btn btn-primary">Add to Cart</button>
-            </form>
-            {{#if message}}
-            <p>{{message}}</p>
-            {{/if}}
-          </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img src={{this.Product_image}} alt="Product Image" class="img-fluid">
         </div>
-        {{/each}}
-      </div>
-    </ul>
+        <div class="col-md-8">
+          <h2>{{this.Product_name}}</h2>
+          <h3>&#8377; {{this.Product_price}}</h3>
+          <p>Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+            Praesent libero. Sed cursus ante dapibus diam.</p>
+          <form action="/add_to_cart" method="POST">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <input type="hidden" name="product_name" value="{{this.Product_name}}">
+            <input type="hidden" name="product_price" value="{{this.Product_price}}">
+            <input type="hidden" name="Seller_id" value="{{this.Seller_id}}">
+            <input type="hidden" name="id_P" value="{{this.id_P}}">
+
+
+
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+          </form>
+          {{#if message}}
+          <p>{{message}}</p>
+          {{/if}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
